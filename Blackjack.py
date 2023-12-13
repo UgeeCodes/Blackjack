@@ -116,12 +116,12 @@ def print_end_game_status(user_hand, dealer_hand):
     print("-----------\nGAME RESULT\n-----------")
 # From the rules, user wins if final the user hand is higher than
 # dealer hand and user hand is less or equal to 21.
-    if user_hand == dealer_hand and user_hand <= 21:
-      print('Push.')
-    elif (user_hand > dealer_hand and user_hand <= 21) or (user_hand <= 21 and dealer_hand > 21):
-      print('You win!')
-    else:
-        print('Dealer wins!')
+    if user_hand <= 21 and (user_hand > dealer_hand or dealer_hand > 21):
+    print('You win!')
+  elif user_hand > 21 or (dealer_hand <= 21 and dealer_hand > user_hand):
+    print('Dealer wins!')
+  else:
+    print('Push.')
 
 # Prints the header for user turn and draws cards for the user.
 print_header('YOUR TURN')
